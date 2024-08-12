@@ -34,6 +34,7 @@ namespace Better.DAL.Mappings
             new Recipe
             {
                 Id = Guid.NewGuid(),
+
                 Title = "Protein Yüksek Atıştırmalık",
                 Materials = "\r\n1 su bardağı yulaf ezmesi\r\n\r\n2 yemek kaşığı bal\r\n\r\n1 yemek kaşığı chia tohumu\r\n\r\n2 yemek kaşığı keten tohumu\r\n\r\n1 çay kaşığı Hindistan cevizi yağı\r\n\r\n1 çay bardağı karışık kuru yemiş\r\n\r\n2 yemek kaşığı fıstık ezmesi\r\n\r\n1 tatlı kaşığı tarçın",
                 Preparation = "İlk olarak geniş bir kap almalısın. Ardından tüm malzemeleri sırayla bu kabın içine dök.\r\n\r\nMalzemeleri homojen bir kıvam alıncaya kadar karıştır.\r\n\r\nTüm malzemeler bir homojen bir kıvama geldikten sonra bir tepsiye yağlı kağıt ser ve hazırlamış olduğun karışımı bu kağıdın üstüne yay.\r\n\r\nKarışım tepsi içerisinde dümdüz bir hal almasını sağla ve karışımı ortalama 20 dk. kadar buzdolabında beklet.\r\n\r\n20 dk. sonunda hazırlamış olduğun barını dilediğin boyutlarda parçalara ayıracak şekilde keserek tüketebilirsin.\r\n",
