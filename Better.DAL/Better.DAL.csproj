@@ -23,4 +23,9 @@
     <ProjectReference Include="..\Better.Entity\Better.Entity.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\Concrete\" />
+    <Folder Include="Repositories\Abstract\" />
+  </ItemGroup>
+
 </Project>
