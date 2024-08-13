@@ -29,19 +29,20 @@ namespace Better.DAL.Repositories.Concrete
            await Table.AddAsync(entity);
         }
 
-        public Task<bool> AnyAsync(Expression<Func<T, bool>> predicate)
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return await Table.AnyAsync(predicate);
         }
 
-        public Task<int> CountAsync(Expression<Func<T, int>> predicate = null)
+        public async Task<int> CountAsync(Expression<Func<T, bool>> predicate = null)
         {
-            throw new NotImplementedException();
+            return await Table.CountAsync(predicate);
         }
 
-        public Task<T> DeleteAsync(T entity)
+        public async Task<T> DeleteAsync(T entity)
         {
-            throw new NotImplementedException();
+            await Task.Run(() => Table.Remove(entity));
+            return entity;
         }
 
         public async Task<List<T>> GetAllAsync(Expression<Func<T, bool>> predicate = null, params Expression<Func<T, object>>[] includeProperties)
@@ -74,12 +75,13 @@ namespace Better.DAL.Repositories.Concrete
 
         public async Task<T> GetByGuidAsync(Guid id)
         {
-            return await Table.FindAsync();
+            return await Table.FindAsync(id);
         }
 
-        public Task<T> UpdateAsync(T entity)
+        public async  Task<T> UpdateAsync(T entity)
         {
-            throw new NotImplementedException();
+            await Task.Run(() => Table.Update(entity));
+            return entity;
         }
     }
 }

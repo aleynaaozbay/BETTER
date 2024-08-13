@@ -1,4 +1,5 @@
 using Better.DAL.Context;
+using Better.DAL.Extensions;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 var assembly = Assembly.GetExecutingAssembly().FullName;
 
 
+builder.Services.LoadDataLayerExtension(builder.Configuration);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
