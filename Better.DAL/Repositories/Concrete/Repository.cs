@@ -29,7 +29,58 @@ namespace Better.DAL.Repositories.Concrete
            await Table.AddAsync(entity);
         }
 
-        public async Task<List<T>> GetAllAsync(Expression<Func<T, bool>> predicate = null)
+        public Task<bool> AnyAsync(Expression<Func<T, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> CountAsync(Expression<Func<T, int>> predicate = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<T> DeleteAsync(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<List<T>> GetAllAsync(Expression<Func<T, bool>> predicate = null, params Expression<Func<T, object>>[] includeProperties)
+        {
+            IQueryable<T> query = Table;
+            if(predicate != null)
+                query = query.Where(predicate);
+
+            if(includeProperties.Any())
+                foreach(var item  in includeProperties)
+                    query  = query.Include(item);
+
+            return await query.ToListAsync();
+        }
+
+        public async Task<T> GetAsync(Expression<Func<T, bool>> predicate , params Expression<Func<T, object>>[] includeProperties)
+        {
+            IQueryable<T> query = Table;
+            query = query.Where(predicate);
+
+            if (includeProperties.Any())
+                foreach (var item in includeProperties)
+                    query = query.Include(item);
+
+            return await query.SingleAsync();
+
+
+
+        }
+
+        public async Task<T> GetByGuidAsync(Guid id)
+        {
+            return await Table.FindAsync();
+        }
+
+        public Task<T> UpdateAsync(T entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 //Task = void 
