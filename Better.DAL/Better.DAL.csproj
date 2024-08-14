@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Better.Core\Better.Core.csproj" />
     <ProjectReference Include="..\Better.Entity\Better.Entity.csproj" />
   </ItemGroup>
 

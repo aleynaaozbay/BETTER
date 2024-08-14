@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Better.Core.Entities
+
+namespace Better.BL.Services.Abstract
 {
-    public class EntityBase : IEntityBase
+    public interface IRecipeService
     {
+        Task<List<Recipe>> GetAllRecipesAsync();
     }
 }
