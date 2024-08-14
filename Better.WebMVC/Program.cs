@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 var assembly = Assembly.GetExecutingAssembly().FullName;
 
 builder.Services.LoadDataLayerExtension(builder.Configuration);
-builder.Services.LoadServiceLayerExtension(builder.Configuration);
+builder.Services.LoadServiceLayerExtension();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

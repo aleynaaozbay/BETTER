@@ -12,10 +12,10 @@ namespace Better.Service.Extensions
 {
     public static class ServiceLayerExtensions
     {
-        public static IServiceCollection LoadServiceLayerExtension(this IServiceCollection services, IConfiguration config)
+        public static IServiceCollection LoadServiceLayerExtension(this IServiceCollection services)
         {
             services.AddScoped<IRecipeService, RecipeService>();
-            return services.LoadServiceLayerExtension(config);
+            return services;
         }
     }
 }
