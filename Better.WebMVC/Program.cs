@@ -9,6 +9,7 @@ var assembly = Assembly.GetExecutingAssembly().FullName;
 
 builder.Services.LoadDataLayerExtension(builder.Configuration);
 builder.Services.LoadServiceLayerExtension(builder.Configuration);
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

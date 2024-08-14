@@ -18,10 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Better.Service\Better.Service.csproj" />
     <ProjectReference Include="..\Better.Core\Better.Core.csproj" />
     <ProjectReference Include="..\Better.DAL\Better.DAL.csproj" />
     <ProjectReference Include="..\Better.Entity\Better.Entity.csproj" />
+    <ProjectReference Include="..\Better.Service\Better.Service.csproj" />
   </ItemGroup>
 
 </Project>

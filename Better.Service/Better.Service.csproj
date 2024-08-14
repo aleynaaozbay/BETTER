@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Better.DAL\Better.DAL.csproj" />
+    <ProjectReference Include="..\Better.Entity\Better.Entity.csproj" />
+  </ItemGroup>
+
 </Project>
