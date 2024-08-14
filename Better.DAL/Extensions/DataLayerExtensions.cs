@@ -1,6 +1,7 @@
 ﻿using Better.DAL.Context;
 using Better.DAL.Repositories.Abstract;
 using Better.DAL.Repositories.Concrete;
+using Better.DAL.UnitOfWorks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +20,10 @@ namespace Better.DAL.Extensions
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(config.GetConnectionString("DefaultConnection")));
 
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+
+           
             return services;
         }
     }
