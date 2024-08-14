@@ -14,3 +14,9 @@
 </div>
 
 
+@foreach (var recipe in Model)
+{
+    <h1>@recipe.Title</h1>
+    <h3>@recipe.Materials</h3>
+    <h3>@recipe.Preparation</h3>
+}
