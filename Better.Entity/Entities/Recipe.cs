@@ -1,4 +1,5 @@
-﻿using Better.Entity.Entities.Abstract;
+﻿using Better.Core.Entities;
+using Better.Entity.Entities.Abstract;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Better.Entity.Entities
 {
-    public class Recipe : BaseEntity
+    public class Recipe : BaseEntity, IEntityBase
     {
-        
+
 
         public string Title { get; set; }
 

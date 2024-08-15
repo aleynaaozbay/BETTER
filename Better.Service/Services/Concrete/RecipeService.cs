@@ -20,7 +20,7 @@ namespace Better.Service.Services.Concrete
 
         public async Task<List<Recipe>> GetAllRecipeAsync()
         {
-            return await GetAllRecipeAsync();
+            return await unitofWork.GetRepository<Recipe>().GetAllAsync();
         }
     }
 }
