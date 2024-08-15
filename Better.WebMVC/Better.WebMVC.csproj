@@ -26,4 +26,8 @@
     <ProjectReference Include="..\Better.Service\Better.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Models\" />
+  </ItemGroup>
+
 </Project>

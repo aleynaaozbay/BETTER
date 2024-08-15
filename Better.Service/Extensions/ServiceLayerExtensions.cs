@@ -16,6 +16,10 @@ namespace Better.Service.Extensions
         {
             services.AddScoped<IRecipeService, RecipeService>();
             return services;
+
+
+
+
         }
     }
 }
