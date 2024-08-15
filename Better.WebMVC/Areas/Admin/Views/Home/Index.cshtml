@@ -2,7 +2,7 @@
 @using Better.Entity.Entities
 @model List<Recipe>
 
-
+    <h1>Admin Area İçerisindeyiz</h1>
 @foreach(var recipe in Model)
 {
     <h1>@recipe.Title</h1>
@@ -11,6 +11,7 @@
     <br />
     <h3>@recipe.Preparation</h3>
     <br />
+    <h3>@recipe.CreatedDate</h3>
    
 }
 
