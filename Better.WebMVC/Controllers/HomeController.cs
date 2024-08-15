@@ -18,7 +18,7 @@ namespace Better.WebMVC.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var recipes = await recipeService.GetAllRecipeAsync();
+            var recipes = await recipeService.GetAllRecipesAsync();
             return View(recipes);
         }
 

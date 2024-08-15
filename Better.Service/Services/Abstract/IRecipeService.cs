@@ -1,4 +1,5 @@
-﻿using Better.Entity.Entities;
+﻿using Better.Entity.DTOs.Recipes;
+using Better.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace Better.Service.Services.Abstract
 {
     public interface IRecipeService
     {
-        public Task<List<Recipe>> GetAllRecipeAsync();
+        Task<List<RecipeDto>> GetAllRecipesAsync();
+
     }
 }
