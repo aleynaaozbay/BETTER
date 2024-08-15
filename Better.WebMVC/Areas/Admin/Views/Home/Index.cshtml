@@ -1,5 +1,16 @@
-﻿@model List<Recipe>
+﻿
+@using Better.Entity.Entities
+@model List<Recipe>
 
 
+@foreach(var recipe in Model)
+{
+    <h1>@recipe.Title</h1>
+    <br />
+    <h3>@recipe.Materials</h3>
+    <br />
+    <h3>@recipe.Preparation</h3>
+    <br />
+   
+}
 
-    

@@ -10,11 +10,12 @@ namespace Better.WebMVC.Areas.Admin.Controllers
 
         public HomeController(IRecipeService recipeService) 
         {
+            this.recipeService = recipeService;
         }
         public async Task<IActionResult> Index()
         {
             var recipes = await recipeService.GetAllRecipeAsync();
-            return View();
+            return View(recipes);
         }
     }
 }
