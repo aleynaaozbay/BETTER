@@ -37,6 +37,34 @@ namespace Better.DAL.Mappings
 
             // Each Role can have many associated RoleClaims
             builder.HasMany<AppRoleClaim>().WithOne().HasForeignKey(rc => rc.RoleId).IsRequired();
+
+
+
+            builder.HasData(new AppRole
+            {
+                Id =Guid.Parse("94048F81 - 1998 - 413F - B345 - 31F69185EF4F"),
+                Name = "SuperAdmin",
+                NormalizedName ="SUPERADMIN",
+                ConcurrencyStamp = Guid.NewGuid().ToString(),
+
+
+            },
+            new AppRole
+            {
+                Id = Guid.Parse("FD0658BB-36CE-479C-A309-923BF7CC19BA"),
+                Name = "Admin",
+                NormalizedName = "ADMIN",
+                ConcurrencyStamp = Guid.NewGuid().ToString(),
+            },
+            new AppRole
+            {
+                Id = Guid.Parse("4435ACB5-3F06-4669-A380-1FD2EF5F2D9D"),
+                Name = "User",
+                NormalizedName = "USER",
+                ConcurrencyStamp = Guid.NewGuid().ToString(),
+
+            });
+
         }
     }
 }

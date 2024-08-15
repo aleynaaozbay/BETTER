@@ -1,4 +1,5 @@
 ﻿using Better.Entity.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -46,6 +47,50 @@ namespace Better.DAL.Mappings
 
             // Each User can have many entries in the UserRole join table
             builder.HasMany<AppUserRole>().WithOne().HasForeignKey(ur => ur.UserId).IsRequired();
+
+
+
+
+            var superadmin= new AppUser
+            {
+                Id = Guid.Parse("768963E1-6E0A-46C0-A591-86F417E0E488"),
+                UserName = "superadmin@gmail.com",
+                NormalizedUserName = "SUPERADMIN@GMAIL.COM",
+                Email = "superadmin@gmail.com",
+                NormalizedEmail =  "SUPERADMIN@GMAIL.COM",
+                PhoneNumber = "+905397080643",
+                FirstName ="Aleyna",
+                LastName ="Ozbay",
+                PhoneNumberConfirmed = true,
+                EmailConfirmed = true,
+                SecurityStamp =Guid.NewGuid().ToString()
+
+
+            };
+            superadmin.PasswordHash = CreatePasswordHash(superadmin, "123456");
+
+
+            var admin = new AppUser
+            {
+                Id = Guid.Parse("07441D44-BCFF-4FC4-817D-63A8598DA47C"),
+                UserName = "admin@gmail.com",
+                NormalizedUserName = "ADMIN@GMAIL.COM",
+                Email = "admin@gmail.com",
+                NormalizedEmail = "ADMIN@GMAIL.COM",
+                PhoneNumber = "+905397080644",
+                FirstName = "Deniz",
+                LastName = "Ozbay",
+                PhoneNumberConfirmed = true,
+                EmailConfirmed = true,
+                SecurityStamp = Guid.NewGuid().ToString()
+            };
+            admin.PasswordHash = CreatePasswordHash(admin, "123456");
+        }
+
+        private string CreatePasswordHash(AppUser user, string password)
+        {
+            var passwordHasher = new PasswordHasher<AppUser>();
+            return passwordHasher.HashPassword(user, password);
         }
     }
 }
