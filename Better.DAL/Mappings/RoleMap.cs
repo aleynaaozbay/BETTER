@@ -42,9 +42,9 @@ namespace Better.DAL.Mappings
 
             builder.HasData(new AppRole
             {
-                Id =Guid.Parse("94048F81 - 1998 - 413F - B345 - 31F69185EF4F"),
+                Id = Guid.Parse("94048F81-1998-413F-B345-31F69185EF4F"),
                 Name = "SuperAdmin",
-                NormalizedName ="SUPERADMIN",
+                NormalizedName = "SUPERADMIN",
                 ConcurrencyStamp = Guid.NewGuid().ToString(),
 
 
@@ -55,15 +55,15 @@ namespace Better.DAL.Mappings
                 Name = "Admin",
                 NormalizedName = "ADMIN",
                 ConcurrencyStamp = Guid.NewGuid().ToString(),
-            },
-            new AppRole
-            {
-                Id = Guid.Parse("4435ACB5-3F06-4669-A380-1FD2EF5F2D9D"),
-                Name = "User",
-                NormalizedName = "USER",
-                ConcurrencyStamp = Guid.NewGuid().ToString(),
-
             });
+            //new AppRole
+            //{
+            //    Id = Guid.Parse("4435ACB5-3F06-4669-A380-1FD2EF5F2D9D"),
+            //    Name = "User",
+            //    NormalizedName = "USER",
+            //    ConcurrencyStamp = Guid.NewGuid().ToString(),
+
+            //});
 
         }
     }
